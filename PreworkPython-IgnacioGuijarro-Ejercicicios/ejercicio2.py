@@ -55,5 +55,6 @@ def cCuenta():
 
 
 # Ejecución del programa
-presentacion()
-cCuenta()
+def run():
+    presentacion()
+    cCuenta()

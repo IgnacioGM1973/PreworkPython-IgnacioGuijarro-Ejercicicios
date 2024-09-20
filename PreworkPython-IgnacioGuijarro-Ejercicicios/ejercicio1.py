@@ -32,5 +32,6 @@ def comienza():
             print("El dato tiene que ser númerico, intentelo otra vez.")
 
 
-presentacion()
-comienza()
+def run():
+    presentacion()
+    comienza()
