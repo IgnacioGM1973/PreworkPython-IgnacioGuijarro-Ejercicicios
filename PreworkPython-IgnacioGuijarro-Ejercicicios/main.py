@@ -1,6 +1,7 @@
 
 
 import importlib
+from utilidades import menu
 
 
 def main():
@@ -9,6 +10,7 @@ def main():
 
     while True:
         print(f"¿Qué ejercicio deseas visualizar?. ")
+        menu()
         respuesta = input(
             "Introduce un número del 1 al 20 (o 'salir' para terminar): ")
         if respuesta.lower() == 'salir':
@@ -26,6 +28,8 @@ def main():
                 print(f"El ejercicio {respuesta} no tiene una función 'run'.")
         else:
             print("Por favor, introduce un número válido entre 1 y 20.")
+        # Espera a que el usuario pulse Enter para continuar. Así puedo ver el resultado antes que salga otra vez el menu.
+        input("\nPulsa Enter para continuar...")
 
 
 if __name__ == "__main__":
