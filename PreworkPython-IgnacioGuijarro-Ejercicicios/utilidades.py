@@ -1,5 +1,10 @@
 # Funciones globales
 
+try:
+    from colorama import Fore, Style
+except ImportError:
+    Fore = Style = lambda x: x  # Si no se puede importar, no aplicar color
+
 # Controla respuesta (s/n)
 def controlar_repuesta_s_n():
     while True:
@@ -7,7 +12,9 @@ def controlar_repuesta_s_n():
         if respuesta.lower() in ['s', 'n']:
             return respuesta.lower()
         else:
+            print(Fore.RED + '\n' + '*' * 70)
             print("Por favor, responda con 's' para sí o 'n' para no.")
+            print('*' * 70 + Style.RESET_ALL)
 
 
 def menu():
@@ -35,3 +42,131 @@ def menu():
     print("Ejercicio 19: Verificación de Año Bisiesto")
     print("Ejercicio 20: Suma de Números en una Lista")
     print("---------------------------------------------------------")
+
+
+def comprueba_texto(texto):
+    '''
+    Función que valida si es solo texto lo introducido.
+    De lo contrario da error.
+    Ejemplo:
+    varTexto = comprueba_texto("Introduce un texto: ")
+    '''
+    while True:
+        textoAcomprobar = ""
+        textoAcomprobar = input(texto)
+
+        if textoAcomprobar.isalpha():
+            print("texto correcto")
+            return textoAcomprobar
+        else:
+            print(Fore.RED + '\n' + '*' * 70)
+            print("Tiene que ser texto. Intentelo otra vez.")
+            print('*' * 70 + Style.RESET_ALL)
+
+
+def comprueba_numero_entero(texto):
+    '''
+    Función que valida que lo intrucido sea solo un número entero.
+    De lo contrario da error.
+    Ejemplo:
+    varTexto = comprueba_texto("Introduce un número entero: ")
+    '''
+    while True:
+        try:
+            print("-" * 70)
+            numero = int(input(texto))
+            print("-" * 70)
+            return numero
+        except ValueError:
+            print(Fore.RED + '\n' + '*' * 70)
+            print("Error, Tiene que ser un número entero.")
+            print('*' * 70 + Style.RESET_ALL)
+
+
+def comprueba_numero_float(texto):
+    '''
+    Función que valida que lo intrucido sea solo un número entero.
+    De lo contrario da error.
+    Ejemplo:
+    varTexto = comprueba_texto("Introduce un número entero: ")
+    '''
+    while True:
+        try:
+            print("-" * 70)
+            numero = float(input(texto))
+            print("-" * 70)
+            return numero
+        except ValueError:
+            print(Fore.RED + '\n' + '*' * 70)
+            print("Error, Tiene que ser un número.")
+            print('*' * 70 + Style.RESET_ALL)
+def comprueba_numero_positivo_float(texto):
+    '''
+    Función que valida que lo intrucido sea solo un número entero positivo y entero.
+    De lo contrario da error.
+    '''
+    valor = True
+    while valor == True:
+        try:
+            print("-" * 70)
+            numero = float(input(texto))
+            print("-" * 70)
+            if numero >= 1:
+                return numero
+            else:
+                print(Fore.RED + '\n' + '*' * 70)
+                print("Error, Tiene que ser un número postivo y mayor de 0.")
+                print('*' * 70 + Style.RESET_ALL)
+                valor = True
+        except ValueError:
+            print(Fore.RED + '\n' + '*' * 70)
+            print("Error, Tiene que ser un número.")
+            print('*' * 70 + Style.RESET_ALL)
+
+            
+def comprueba_numero_positivo(texto):
+    '''
+    Función que valida que lo intrucido sea solo un número entero positivo.
+    De lo contrario da error.
+    '''
+    valor = True
+    while valor == True:
+        try:
+            print("-" * 70)
+            numero = float(input(texto))
+            print("-" * 70)
+            if numero >= 1:
+                return numero
+            else:
+                print(Fore.RED + '\n' + '*' * 70)
+                print("Error, Tiene que ser un número postivo y mayor de 0.")
+                print('*' * 70 + Style.RESET_ALL)
+                valor = True
+        except ValueError:
+            print(Fore.RED + '\n' + '*' * 70)
+            print("Error, Tiene que ser un número.")
+            print('*' * 70 + Style.RESET_ALL)
+
+def comprueba_numero_positivo_entero(texto):
+    '''
+    Función que valida que lo intrucido sea solo un número entero positivo y entero.
+    De lo contrario da error.
+    '''
+    valor = True
+    while valor == True:
+        try:
+            print("-" * 70)
+            numero = int(input(texto))
+            print("-" * 70)
+            if numero >= 1:
+                return numero
+            else:
+                print(Fore.RED + '\n' + '*' * 70)
+                print("Error, Tiene que ser un número postivo y mayor de 0.")
+                print('*' * 70 + Style.RESET_ALL)
+                valor = True
+        except ValueError:
+            print(Fore.RED + '\n' + '*' * 70)
+            print("Error, Tiene que ser un número.")
+            print('*' * 70 + Style.RESET_ALL)
+

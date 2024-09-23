@@ -4,7 +4,7 @@ Crea un programa que cuente el número de vocales en una palabra ingresada por e
 usuario.
 '''
 
-from utilidades import controlar_repuesta_s_n
+from utilidades import controlar_repuesta_s_n, comprueba_texto
 
 # Para agregar color en terminales que lo soporten
 try:
@@ -17,7 +17,7 @@ def presentacion():
     print(Fore.CYAN + '\n' + '*' * 70)
     print(' ' * 10 + 'Contador de vocales'.center(50))
     print('*' * 70 + Style.RESET_ALL)
-    print('\nCrea un programa que cuente el número de vocales en una palabra ingresada por el usuario.,')
+    print('\nPrograma que cuenta el número de vocales en una palabra ingresada por el usuario.,')
 
 
 def chequeaTexto(edad):
@@ -68,6 +68,3 @@ def comienza():
 def run():
     presentacion()
     comienza()
-
-
-run()

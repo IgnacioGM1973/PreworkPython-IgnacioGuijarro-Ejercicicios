@@ -17,7 +17,7 @@ except ImportError:
 
 def presentacion():
     print(Fore.CYAN + '\n' + '*' * 70)
-    print(' ' * 10 + 'Bienvenido a la Calculadora de Propina'.center(50))
+    print(' ' * 10 + 'Calculadora de Propina'.center(50))
     print('*' * 70 + Style.RESET_ALL)
     print('\nEste programa calcula el monto total a pagar en un restaurante,')
     print('incluyendo una propina del 15% sobre el total de la cuenta.\n')

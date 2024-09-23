@@ -3,18 +3,31 @@
 import importlib
 from utilidades import menu
 
+# Para agregar color en terminales que lo soporten
+try:
+    from colorama import Fore, Style
+except ImportError:
+    Fore = Style = lambda x: x  # Si no se puede importar, no aplicar color
+
 
 def main():
+    print(Fore.BLUE + '\n' + '-' * 70)
     nombre = input("Hola, Introduce tu nombre por favor: ")
-    print(f"Encantado {nombre}")
+    print(Fore.LIGHTBLUE_EX + f"Encantado, {nombre.title()}")
+    print('-' * 70 + Style.RESET_ALL + "\n")
 
     while True:
-        print(f"¿Qué ejercicio deseas visualizar?. ")
+
+        print(Fore.YELLOW + f"¿Qué ejercicio deseas visualizar?" +
+              Style.RESET_ALL + "\n")
+
         menu()
         respuesta = input(
             "Introduce un número del 1 al 20 (o 'salir' para terminar): ")
         if respuesta.lower() == 'salir':
-            print('Hasta luego!!')
+            print(Fore.CYAN + '\n' + '*' * 70)
+            print('                              Hasta otra!!')
+            print('*' * 70 + Style.RESET_ALL + "\n")
             break
         if respuesta.isdigit() and 1 <= int(respuesta) <= 20:
             try:
