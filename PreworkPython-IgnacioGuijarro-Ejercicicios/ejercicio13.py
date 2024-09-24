@@ -26,7 +26,7 @@ def comienza():
     while respuesta == 's':
 
         n = comprueba_numero_float("Introduzca un número positivo: ")
-        if n < 1:
+        if n <= 1:
             print(Fore.RED + '\n' + '*' * 70)
             print(f"El  número  {n} no es primo.")
             print('*' * 70 + Style.RESET_ALL)
