@@ -20,9 +20,6 @@ def presentacion():
     print('\nPrograma que cuenta el número de vocales en una palabra ingresada por el usuario.,')
 
 
-def chequeaTexto(edad):
-    pass
-
 
 def es_texto():
     vocales = ["a", "e", "i", "o", "u"]
@@ -30,11 +27,12 @@ def es_texto():
     while True:
         print("*" * 70)
         texto = input("Ingresa un texto: ")
+        texto2 = texto.replace(" ","")
         print("*" * 70)
-        cadenaSoloTexto = texto.isalpha()
+        cadenaSoloTexto = texto2.isalpha()
         if cadenaSoloTexto:
             print("¡Es un texto válido!")
-            for i in texto:
+            for i in texto2:
                 if i.lower() in vocales:
                     contaVocal += 1
             print("*" * 70)

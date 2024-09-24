@@ -31,7 +31,7 @@ def comienza():
         try:
             resultado = numero1 / (numero2 ** 2)
             print(Fore.GREEN + '\n' + '*' * 70)
-            print(F"EL IMC ES DE: {resultado}")
+            print(f"EL IMC ES DE: {resultado:.2f}")
             print('*' * 70 + Style.RESET_ALL)
 
         except ZeroDivisionError:

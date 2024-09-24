@@ -24,8 +24,12 @@ def chequeaEdad(edad):
         print(Fore.GREEN + '\n' + '*' * 29)
         print("***** Eres mayor de edad ****")
         print("*" * 29)
-    else:
+    elif edad < 0:
         print(Fore.RED + '\n' + '*' * 29)
+        print("***** Edad incorrecta ****")
+        print("*" * 29)
+    else:
+        print(Fore.MAGENTA + '\n' + '*' * 29)
         print("***** Eres menor de edad ****")
         print("*" * 29)
     print(Style.RESET_ALL)

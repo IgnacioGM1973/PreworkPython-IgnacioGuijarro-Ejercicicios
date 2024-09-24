@@ -23,6 +23,21 @@ def comienza():
     respuesta = 's'
     while respuesta == 's':
         texto = comprueba_texto("Introduzca una palabra: ")
+        '''
+        Otra forma de dar la vuelta a la palabra:
+        texto = texto[::-1]
+        f texto == texto2:
+            print(Fore.GREEN + '\n' + '-' * 70)
+            print(f'La palabra "{
+                  texto}" es palíndromo".')
+            print(Fore.GREEN + '-' * 70 + Style.RESET_ALL + '\n')
+        else:
+            print(Fore.RED + '\n' + '-' * 70)
+            print(f'La palabra "{
+                  texto}" NO ES palíndromo".')
+            print(Fore.RED + '-' * 70 + Style.RESET_ALL + '\n')
+        
+        '''
         longitudTexto = len(texto)
         print(f"la longitud de texto es: {longitudTexto}")
         # print(texto[4:5])
